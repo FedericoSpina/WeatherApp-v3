@@ -1,42 +1,38 @@
-import { useState } from 'react'
-import './WeatherApp.css'
+import { useState } from "react";
+import "./WeatherApp.css";
 
-import search_icon from '../Assets/search.png'
-import clear_icon from '../Assets/clear.png'
-import cloud_icon from '../Assets/cloud.png'
-import drizzle_icon from '../Assets/drizzle.png'
-import rain_icon from '../Assets/rain.png'
-import snow_icon from '../Assets/snow.png'
-import wind_icon from '../Assets/wind.png'
-import humidity_icon from '../Assets/humidity.png'
-
-
+import search_icon from "../Assets/search.png";
+import clear_icon from "../Assets/clear.png";
+import cloud_icon from "../Assets/cloud.png";
+import drizzle_icon from "../Assets/drizzle.png";
+import rain_icon from "../Assets/rain.png";
+import snow_icon from "../Assets/snow.png";
+import wind_icon from "../Assets/wind.png";
+import humidity_icon from "../Assets/humidity.png";
 
 const WeatherApp = () => {
-  let api_key = "2e8a73f07e6836e9aa7cedccfce6dce6"
-  const [wicon, setWicon] = useState(cloud_icon)
+  let api_key = "2e8a73f07e6836e9aa7cedccfce6dce6";
+  const [wicon, setWicon] = useState(cloud_icon);
 
   const search = async () => {
-    const element = document.getElementsByClassName('cityInput');
+    const element = document.getElementsByClassName("cityInput");
     if (element[0].value === "") {
-      return 0
-    }
-    else {
+      return 0;
+    } else {
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`;
 
       let response = await fetch(url);
       let data = await response.json();
 
-
-      const humidity = document.getElementsByClassName('humidity-percent');
-      const wind = document.getElementsByClassName('wind-rate');
-      const temprature = document.getElementsByClassName('weather-temp');
-      const location = document.getElementsByClassName('weather-location');
+      const humidity = document.getElementsByClassName("humidity-percent");
+      const wind = document.getElementsByClassName("wind-rate");
+      const temprature = document.getElementsByClassName("weather-temp");
+      const location = document.getElementsByClassName("weather-location");
 
       humidity[0].innerHTML = `${data.main.humidity}%`;
       wind[0].innerHTML = `${Math.round(data.wind.speed)} km/h`;
       temprature[0].innerHTML = `${Math.round(data.main.temp)}°C`;
-      location[0].innerHTML = `${data.name}`
+      location[0].innerHTML = `${data.name}`;
 
       // Objeto que mapea códigos de iconos meteorológicos a sus iconos correspondientes
       const iconMappings = {
@@ -58,7 +54,7 @@ const WeatherApp = () => {
 
       // Obtiene el código de icono del tiempo actual
       const weatherIcon = data.weather[0].icon;
-      let wicon;  // Variable para almacenar el icono correspondiente
+      let wicon; // Variable para almacenar el icono correspondiente
 
       // Evalúa el código del icono del tiempo actual y asigna el icono correspondiente
       switch (weatherIcon) {
@@ -92,24 +88,26 @@ const WeatherApp = () => {
           break;
 
         default:
-          wicon = iconMappings["01d"];  // Icono predeterminado si no coincide con ningún caso
+          wicon = iconMappings["01d"]; // Icono predeterminado si no coincide con ningún caso
           break;
       }
 
       // Asigna el icono correspondiente obtenido del mapeo
       setWicon(wicon);
     }
-  }
-
+  };
 
   return (
     <>
       <div className="container">
         <div className="top-bar">
-          <form className="search-form" onSubmit={(event) => {
-            event.preventDefault();  // Prevent the default form submission behavior
-            search();
-          }}>
+          <form
+            className="search-form"
+            onSubmit={(event) => {
+              event.preventDefault(); // Prevent the default form submission behavior
+              search();
+            }}
+          >
             <input type="text" className="cityInput" placeholder="Search" />
             <div className="search-icon" onClick={() => search()}>
               <img src={search_icon} alt="search" />
@@ -118,23 +116,16 @@ const WeatherApp = () => {
         </div>
 
         <div className="weather-image">
-
           <img src={wicon} alt="cloud" />
         </div>
 
-        <div className="weather-temp">
-          28°C
-        </div>
-        <div className="weather-location">
-          London
-        </div>
+        <div className="weather-temp">The Weather App</div>
+        <div className="weather-location">Your weather forecast, now.</div>
         <div className="data-container">
           <div className="element">
             <img src={humidity_icon} alt="" className="icon" />
             <div className="data">
-              <div className="humidity-percent">
-                64%
-              </div>
+              <div className="humidity-percent">%</div>
               <div className="text">Humidity</div>
             </div>
           </div>
@@ -142,16 +133,14 @@ const WeatherApp = () => {
           <div className="element">
             <img src={wind_icon} alt="" className="icon" />
             <div className="data">
-              <div className="wind-rate">
-                88 km/h
-              </div>
+              <div className="wind-rate">km/h</div>
               <div className="text">Wind speed</div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default WeatherApp
+export default WeatherApp;
