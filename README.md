@@ -1,9 +1,5 @@
-# The Weather App 
-![Icon-1024](https://github.com/FedericoSpina/WeatherApp-v3/assets/81193789/999b67e8-6dfe-4558-a9cd-5b29eb7d2920)
-
-![weather-app-v3 vercel app_](https://github.com/FedericoSpina/WeatherApp-v3/assets/81193789/9adc75aa-ac0c-4a0a-b973-c8efbf5801a1)
-
-
-## Deploy the page
-
+# The Weather App  ![Icon48](https://github.com/FedericoSpina/WeatherApp-v3/assets/81193789/e838af34-b852-4ba9-9d99-70bc376cbb26)
 [![Deploy the page](https://vercel.com/button)](https://weather-app-v3.vercel.app/)
+
+![weather-app-v3 vercel app_ (3)](https://github.com/FedericoSpina/WeatherApp-v3/assets/81193789/5b365e98-b8a1-4163-bb28-df47f3f714a0)
+
