@@ -135,10 +135,10 @@
 /* Media query for mobile */
 @media (max-width: 767px) {
   .container {
-    width: 80%;
-    height: 700px;
-    margin-top: 50px;
     border-radius: 8px;
+    height: 600px;
+    margin-top: 70px;
+    width: 95%;
   }
 
 
@@ -174,11 +174,11 @@
     gap: 5px;
   }
   .weather-temp {
-    font-size: 80px;
+    font-size: 65px;
   }
 
   .weather-location {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .data {
