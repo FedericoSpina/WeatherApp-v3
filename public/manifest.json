@@ -1,12 +1,11 @@
 {
   "short_name": "Weather",
   "name": "The Weather App",
-  "start_url": ".",
-  "scope": "./",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#130754",
-  "theme_color": "#07031c",
   "orientation": "portrait",
+  "theme_color": "#07031c",
+  "background_color": "#130754",
   "id": "/",
   "icons": [
     {
@@ -24,7 +23,7 @@
           "src": "icon512.png",
           "type": "image/png",
           "sizes": "512x512",
-          "purpose": "any"
+          "purpose": "maskable"
       },
       {
           "src": "icon192.png",
