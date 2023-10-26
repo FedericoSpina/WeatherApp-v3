@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./WeatherApp.css";
 
+import "./WeatherApp.css";
 import search_icon from "../Assets/search.png";
 import clear_icon from "../Assets/clear.png";
 import cloud_icon from "../Assets/cloud.png";
@@ -9,6 +9,9 @@ import rain_icon from "../Assets/rain.png";
 import snow_icon from "../Assets/snow.png";
 import wind_icon from "../Assets/wind.png";
 import humidity_icon from "../Assets/humidity.png";
+
+
+
 
 const WeatherApp = () => {
   let api_key = "2e8a73f07e6836e9aa7cedccfce6dce6";
@@ -97,8 +100,13 @@ const WeatherApp = () => {
     }
   };
 
+  
   return (
     <>
+    
+  
+  <pwa-install explainer="Your Personal Weather Companion" id="installId">Install PWA</pwa-install>
+
       <div className="container">
         <div className="top-bar">
           <form

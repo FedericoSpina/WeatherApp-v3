@@ -7,6 +7,25 @@
   "theme_color": "#07031c",
   "background_color": "#130754",
   "id": "/",
+  "description": "Stay ahead of the elements with our weather app, your go-to companion for real-time weather updates. From daily forecasts to severe weather alerts, this app provides you with accurate, up-to-the-minute weather information, ensuring you're prepared for whatever Mother Nature has in store. Plan your day, week, or travel with confidence, and never be caught off guard by the weather again.",
+  "screenshots": [
+    {
+        "src": "screenshot.png",
+        "type": "image/png",
+        "sizes": "782x1598"
+    },
+    {
+        "src": "screenshot2.png",
+        "type": "image/png",
+        "sizes": "1170x2532"
+    },
+    {
+        "src": "screenshot3.png",
+        "type": "image/png",
+        "sizes": "1170x2532"
+    }
+
+],
   "icons": [
     {
         "src": "favicon.ico",
